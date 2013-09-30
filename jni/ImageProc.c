@@ -45,6 +45,7 @@ int opendevice(int i)
 
 	sprintf(dev_name,"/dev/video%d",i);
 
+	/*
 	sprintf(system_call_buffer,"su -c \"chmod 666 %s\"",dev_name);
 
 	int ret = system(system_call_buffer);
@@ -53,6 +54,7 @@ int opendevice(int i)
 		LOGE("Could not %s : %d, %s",system_call_buffer, errno, strerror (errno));
 		return ERROR_LOCAL;
 	}
+	 */
 
 	if (-1 == stat (dev_name, &st)) {
 		LOGE("Cannot identify '%s': %d, %s", dev_name, errno, strerror (errno));
